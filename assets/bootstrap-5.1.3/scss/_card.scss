@@ -2,6 +2,19 @@
 // Base styles
 //
 
+/* clase personalizada */
+.bg-color-card {
+  background-color: #222529;
+}
+
+.color-title {
+  color: #cf649a;
+}
+
+.color-text {
+  color: #ffff;
+}
+
 .card {
   position: relative;
   display: flex;
@@ -9,7 +22,8 @@
   min-width: 0; // See https://github.com/twbs/bootstrap/pull/22740#issuecomment-305868106
   height: $card-height;
   word-wrap: break-word;
-  background-color: $card-bg;
+  /* background-color: $card-bg; */
+  @extend .bg-color-card;
   background-clip: border-box;
   border: $card-border-width solid $card-border-color;
   @include border-radius($card-border-radius);
@@ -53,6 +67,7 @@
 
 .card-title {
   margin-bottom: $card-title-spacer-y;
+  @extend .color-title;
 }
 
 .card-subtitle {
@@ -62,6 +77,11 @@
 
 .card-text:last-child {
   margin-bottom: 0;
+  @extend .color-text;
+}
+
+.card-text {
+  @extend .color-text;
 }
 
 .card-link {
